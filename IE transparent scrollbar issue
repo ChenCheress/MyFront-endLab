@@ -1,0 +1,12 @@
+IE browser provide a float, transparent and auto-hidden scrollbar, but it may cause some style issue: it covers some content and the transparent
+style make it looks strange.
+为了触屏操作优化浏览器的内容显示，IE 浏览器提供了一种可以浮动显示，自动隐藏的滚动条样式，但是这个样式会在某些情况下造成一些困扰，ie中的滚动条覆盖了内容。
+默认情况下，桌面版的 IE 应该是传统的滚动条样式；但在应用版的 IE 中，滚动条默认才是浮动显示，自动隐藏。
+而一些使用了 bootstrap 样式的网站，也会出现相同这种情况，因为bootstrap设置了一个属性：
+@-ms-viewport {
+  width: device-width;
+}
+如果想更改滚动条的样式，可以为 IE 浏览器强制设置一个样式：
+html, body {
+    -ms-overflow-style: scrollbar;
+}
